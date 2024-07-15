@@ -16,7 +16,7 @@ pipeline {
     stage('Build Docker Image') {
       steps {
         script {
-          dockerImage = docker.build("${DOCKERHUB_CREDENTIALS_USR}/myapp:latest")
+          dockerImage = docker.build("${DOCKERHUB_CREDENTIALS_USR}/myapp:latest", "app")
         }
       }
     }
