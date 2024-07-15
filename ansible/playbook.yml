@@ -1,0 +1,29 @@
+---
+- hosts: docker_servers
+  tasks:
+    - name: Ensure Python pip is installed
+      yum:
+        name: python3-pip
+        state: present
+
+    - name: Ensure required Python libraries are installed
+      pip:
+        name:
+          - "requests==2.25.1"
+          - "urllib3==1.26.5"
+
+
+    - name: Pull the latest Docker image
+      docker_image:
+        name: nguyen1611/myapp
+        tag: latest
+        source: pull
+
+    - name: Run the Docker container
+      docker_container:
+        name: myapp
+        image: nguyen1611/myapp:latest
+        state: started
+        restart_policy: always
+        ports:
+          - "80:80"
