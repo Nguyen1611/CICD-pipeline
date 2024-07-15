@@ -1,5 +1,6 @@
 ---
 - hosts: docker_servers
+  become: true
   tasks:
     - name: Ensure Docker is installed
       yum:
@@ -7,7 +8,7 @@
         state: present
 
     - name: Start Docker service
-      service:
+      systemd:
         name: docker
         state: started
         enabled: true
