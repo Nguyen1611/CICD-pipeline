@@ -33,7 +33,11 @@ pipeline {
       steps {
         sshagent(['sshkey-docker-ec2']) {
           script {
-            sh 'ansible-playbook -i ansible/hosts.ini ansible/playbook.yml'
+            sh """
+              ssh -o StrictHostKeyChecking=no ec2-user@${DOCKER_SERVER_IP} << EOF
+                ansible-playbook -i ansible/hosts.ini ansible/playbook.yml
+              EOF
+            """
           }
         }
       }
