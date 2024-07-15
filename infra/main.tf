@@ -115,6 +115,12 @@ resource "aws_instance" "jenkins" {
         sudo yum install -y jenkins
         sudo systemctl enable jenkins
         sudo systemctl start jenkins
+        sudo yum install git -y
+        sudo amazon-linux-extras install docker -y
+        sudo service docker start
+        sudo usermod -a -G docker ec2-user
+        sudo usermod -a -G docker jenkins
+        sudo pip3 install ansible
         EOF
 }
 
