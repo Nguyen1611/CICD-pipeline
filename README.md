@@ -35,7 +35,7 @@ Jenkins will use the Dockerfile located in the `app` directory to build the Dock
 ### Step 3: Push Docker Image
 Jenkins will push the built Docker image to DockerHub using the credentials provided.
 
-### Step 4: Deploy with Ansible
+### Step 4: Deploy with Ansible (remember to replace the IP in hosts.ini with your docker server )
 Jenkins will run the Ansible playbook to deploy the Docker container on the target server. The Ansible playbook is configured to:
 - Ensure Docker is installed
 - Start the Docker service
