@@ -3,6 +3,8 @@
 ## Overview
 This project demonstrates a CI/CD pipeline that automatically deploys or updates a website whenever there is a push to the GitHub repository. The pipeline utilizes Jenkins, Ansible, Docker, Prometheus, and Grafana to achieve continuous integration and deployment with monitoring capabilities.
 
+![CICDpipeline drawio](https://github.com/user-attachments/assets/1281ca7d-c193-46b9-ba54-e8b6ee2c78e7)
+
 
 ## Technologies Used
 - **Jenkins:** For automating the CI/CD pipeline.
