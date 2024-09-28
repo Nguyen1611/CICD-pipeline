@@ -10,7 +10,7 @@ This project demonstrates a CI/CD pipeline that automatically deploys or updates
 - **Jenkins:** For automating the CI/CD pipeline.
 - **Ansible:** For configuration management and deployment automation.
 - **Docker:** For containerizing the application.
-
+- **AWS:** Multiple EC2 to hosting the server.
 
 ## Pipeline Workflow
 1. **Clone Repository:** Jenkins clones the GitHub repository.
